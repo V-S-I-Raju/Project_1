@@ -1,0 +1,83 @@
+(1) Study Hours
+ML Effect:
+- Strong positive effect
+- More study → higher predicted score
+
+Why?
+- In My Training data, students with more study hours scored more
+- ML learns:
+Study ↑ → Score ↑
+
+App Logic:
+- No penalty or limit
+- Only advice if too low
+Final Impact:
+- Always increases score
+- One of the most important features
+
+Example:
+2 hrs → low score
+6 hrs → medium-high score
+9 hrs → high score
+
+(2) Attendance (%)
+ML Effect:
+- Strong positive effect
+- Higher attendance improves prediction
+Why?
+- Data shows attendance and score move together
+
+ML learns:
+Attendance ↑ → Score ↑
+
+App Logic:
+- Advice if attendance < 75%
+- No direct penalty
+Final Impact:
+✔ Directly pushes score upward
+✔ Shows consistency and discipline
+
+Example:
+- 60% → score drops
+- 85% → score improves clearly
+
+(3) Sleep Hours (MOST INTERESTING FEATURE):
+ML Effect: 
+- Positive effect
+- ML thinks “more sleep = better”
+
+Why?
+Training data mostly had:
+- 7–8 hrs = good scores
+- No bad oversleep examples
+
+App Logic: 
+Sleep Hours	Effect
+< 6 hrs	      Advice only (bad habit)
+7–8 hrs	      Ideal (best performance)
+> 9 hrs	      Penalty applied
+if sleep_hours > 9:
+    predicted_score -= 5
+
+Final Impact:
+- Healthy sleep helps
+- Too much sleep reduces score
+
+This creates a realistic, non-linear effect.
+
+(4) Mobile Usage: 
+ML Effect:
+- Negative effect
+- More mobile usage → lower score
+
+Why?
+- Data consistently shows distraction reduces performance
+ML learns:
+- Mobile ↑ → Score ↓
+
+App Logic: 
+- Advice if mobile > 4 hrs
+- No extra penalty needed
+Final Impact:
+- High usage reduces score
+- Low usage helps indirectly
